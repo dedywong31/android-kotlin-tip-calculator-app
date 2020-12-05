@@ -1,1 +1,2 @@
-"Tip Calculator App with Koltin\n================" 
+Tip Calculator App with Koltin
+===============
