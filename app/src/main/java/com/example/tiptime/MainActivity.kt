@@ -17,15 +17,24 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // Inflate the layout XML file and return a binding object instance
         binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(R.layout.activity_main)
-        binding.calculatorButton.setOnClickListener { calculateTip() }
+
+        // Set the content view of the Activity to be the root view of the layout
+        setContentView(binding.root)
+
+        // Setup a click listener on the calculate button to calculate the tip
+        binding.calculateButton.setOnClickListener { calculateTip() }
+
+        // Set up a key listener on the EditText field to listen for "enter" button presses
         binding.costOfServiceEditText.setOnKeyListener { view, keyCode, _ ->
             handleKeyEvent(
                 view,
                 keyCode
             )
         }
+        displayTip(0.0)
     }
 
     private fun calculateTip() {
