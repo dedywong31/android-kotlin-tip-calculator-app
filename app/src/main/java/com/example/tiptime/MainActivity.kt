@@ -51,6 +51,10 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    /**
+     * Format the tip amount according to the local currency and display it onscreen.
+     * Example would be "Tip Amount: $10.00".
+     */
     private fun displayTip(tip: Double) {
         val formattedTip = NumberFormat.getCurrencyInstance().format(tip)
         binding.tipResult.text = getString(R.string.tip_amount, formattedTip)
